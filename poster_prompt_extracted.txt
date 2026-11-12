@@ -1,0 +1,505 @@
+<USER_REQUEST>
+# MASTER PROMPT — SANJIVANI | A3 INTERNATIONAL SCIENCE FAIR RESEARCH POSTER
+
+Act as an award-winning scientific poster designer, engineering researcher, scientific visualisation specialist and International Science and Engineering Fair (ISEF)-style research communication expert.
+
+Create a **single-page, professionally designed, print-ready A3 landscape scientific research poster** for the project SANJIVANI.
+
+The poster must look like something displayed at an international science and engineering fair, university research symposium or professional engineering conference.
+
+Do not produce a school chart, PowerPoint slide, brochure, infographic collage or generic promotional poster.
+
+The objective is to communicate the engineering problem, research hypothesis, proposed system, scientific principles, quantitative simulation, engineering economics and experimental validation plan in a visually compelling and technically credible format.
+
+## 1. SOURCE DOCUMENT — MOST IMPORTANT
+
+Use the attached document:
+
+**SANJIVANI — Senior Bal Vigyan 2026–2027 Project Report.pdf**
+
+Treat this as the primary source of project-specific information.
+
+Extract the relevant scientific, technical, numerical, financial and administrative information from the report.
+
+The poster must remain consistent with the report.
+
+Before designing:
+
+1. Extract the project's actual research question.
+2. Extract the system architecture.
+3. Extract all model assumptions.
+4. Extract the simulation results.
+5. Extract the energy calculations.
+6. Extract battery-sizing calculations.
+7. Extract the bill of materials and cost analysis.
+8. Extract technical limitations and future work.
+9. Verify numerical consistency and arithmetic.
+10. Identify which figures are simulated, estimated, proposed or experimentally measured.
+
+If two sections of the report contain inconsistent numbers, resolve the discrepancy by recalculating from the documented assumptions. Do not silently select an attractive-looking result.
+
+Never invent missing data.
+
+## 2. PROJECT IDENTITY
+
+**Project name:**
+
+SANJIVANI (संजीवनी)
+
+**Official title:**
+
+Design and Development of a Sensor-Triggered Hybrid PCM–Peltier Cooling System for Extended Medical Cold-Chain Storage.
+
+**Tagline:**
+
+Preserving Temperature. Protecting Life.
+
+**Competition:** Dr. B. K. Passi Memorial Senior Bal Vigyan 2026–2027.
+
+**Subject:** Physics.
+
+**Theme:** STEM for Viksit and Atmanirbhar Bharat.
+
+**Sub-theme:** Health and Hygiene.
+
+**Institution:** G. D. Goenka Public School, Indore, Madhya Pradesh, India.
+
+**Mentor:** Mr. Gopal Kumar Roy.
+
+### Participants
+
+- Vaishnavi Shrivastava — Class XI
+- Gaurav Choudhary — Class XI
+- Prathamesh Rao — Class XII
+- Bhavmanyu Singh — Class XII
+
+Keep the participant names accurate. Observers do not need to appear on the research poster.
+
+Registration ID: [PLACEHOLDER, if required].
+
+## 3. POSTER FORMAT AND PRINT SPECIFICATIONS
+
+- Page size: A3, 420 × 297 mm.
+- Orientation: Landscape.
+- Output: PDF.
+- Resolution: 300 DPI for raster artwork.
+- Prefer vector illustrations, diagrams and typography wherever possible.
+- Embed all fonts.
+- Maintain a minimum 8–10 mm safe margin.
+- Add 3 mm bleed if supported by the print workflow.
+- Ensure no text, labels or illustrations are cut off.
+- Use print-friendly colours with sufficient contrast.
+- Ensure all small text remains legible at actual A3 print size.
+
+The output must be one single page, not multiple pages.
+
+## 4. VISUAL DESIGN DIRECTION
+
+Use the design language of elite scientific research posters.
+
+### Overall aesthetic
+
+- Minimalist.
+- Technical.
+- Research-oriented.
+- High information density without clutter.
+- Strong visual hierarchy.
+- Crisp engineering illustrations.
+- Professional data visualisation.
+- Consistent alignment and spacing.
+
+### Colour palette
+
+Use:
+- Deep navy: primary titles and technical headers.
+- White: dominant background.
+- Muted teal: system architecture and cooling pathways.
+- Light blue-grey: section backgrounds.
+- Restrained amber: hot-side heat flow, warnings and assumptions.
+- Dark charcoal: body text.
+
+Avoid:
+- Neon colours.
+- Cartoon illustrations.
+- Heavy gradients.
+- Excessive icons.
+- Decorative backgrounds.
+- Unnecessary medical stock photographs.
+- Clip-art aesthetics.
+
+### Typography
+
+Use:
+- Large, bold title.
+- Clear section headings.
+- Professional sans-serif body typography.
+- Readable numerical highlights.
+- Consistent captions.
+
+Suggested hierarchy:
+- Main title: 30–38 pt.
+- Section headings: 15–19 pt.
+- Body text: 9–12 pt.
+- Figure captions and references: 7–9 pt.
+
+Do not shrink body text excessively to fit more information. Prioritise the most important scientific information.
+
+## 5. REQUIRED POSTER LAYOUT
+
+Use a carefully designed three-column research-poster grid.
+
+### TOP HEADER — FULL WIDTH
+
+The top 15–18% of the poster should contain:
+
+**SANJIVANI**
+
+HYBRID PCM–PELTIER MEDICAL COLD-CHAIN SYSTEM
+
+*Preserving Temperature. Protecting Life.*
+
+Underneath, include the complete project title in a smaller type size.
+
+Include:
+- All four participant names.
+- Class details.
+- G. D. Goenka Public School, Indore.
+- Mentor: Mr. Gopal Kumar Roy.
+- Competition and sub-theme.
+
+Make the title visually dominant without wasting excessive space.
+
+---
+
+### COLUMN 1 — THE PROBLEM AND SCIENCE
+
+#### A. The Problem
+
+Explain the medical cold-chain challenge.
+
+Communicate that:
+- Conventional PCM cooling has finite thermal-storage capacity.
+- Heat gradually enters the insulated enclosure.
+- PCM loses its ability to provide effective thermal buffering as its phase-change reserve is consumed.
+- Extended transportation and storage can create temperature-control challenges.
+
+Present the approximately 72-hour figure only as the project's stated planning baseline, not a universal industry specification.
+
+#### B. Research Question
+
+Display prominently:
+
+Can sensor-triggered thermoelectric cooling extend the useful temperature-holding duration of a PCM-based medical cold-chain container while controlling electrical energy consumption?
+
+#### C. Research Hypothesis
+
+Explain that selectively activated Peltier cooling may slow the depletion of PCM's thermal reserve, provided sufficient heat can be transferred and rejected from the hot side.
+
+#### D. Scientific Principles
+
+Show three concise scientific explanations:
+
+1. **PCM:** Latent heat storage.
+2. **Peltier effect:** Active heat pumping using electrical energy.
+3. **Thermal spreading:** Aluminium distributes cooling across the intended interface.
+
+Include the equations:
+
+Q = mL
+
+P = V × I
+
+Q̇hot = Q̇cold + Pelectrical
+
+Define symbols briefly.
+
+---
+
+### COLUMN 2 — THE ENGINEERING INNOVATION
+
+This should be the visual centrepiece of the poster.
+
+#### A. Large SANJIVANI system architecture
+
+Create a detailed original engineering illustration showing a cutaway view of the proposed medical cooling enclosure.
+
+The illustration should identify:
+
+1. Insulated outer enclosure.
+2. PCM chamber.
+3. Medical payload compartment.
+4. Temperature sensors.
+5. Thermoelectric Peltier module.
+6. Cold-side thermal interface.
+7. Aluminium heat-spreading plates.
+8. Liquid-based thermal-transfer chamber or loop.
+9. Peltier hot side.
+10. External heat sink / heat exchanger.
+11. Fan or pump, where applicable.
+12. Control electronics.
+13. Power source.
+
+Use arrows with a colour-coded legend:
+
+- Blue: cold-side heat extraction / cooling path.
+- Orange: hot-side heat rejection.
+- Teal: liquid heat transport.
+- Grey: electrical and control connections.
+
+All labels must be readable.
+
+Do not invent an actual physical layout that contradicts the report. Where the detailed component placement remains undecided, show a conceptual engineering schematic and identify it as proposed.
+
+#### B. Working Principle
+
+Represent the operating cycle as a concise sequence:
+
+1. PCM provides passive cooling.
+2. Sensors continuously monitor internal temperature.
+3. The controller detects an upper-threshold condition.
+4. Peltier cooling activates.
+5. Aluminium distributes cooling across the intended thermal interface.
+6. The hot-side pathway transfers heat to an external heat-rejection system.
+7. Active cooling switches off at the lower threshold.
+8. PCM resumes providing the primary passive cooling.
+
+#### C. Intelligent Control
+
+Include a small, clean flowchart demonstrating the temperature-triggered operating logic.
+
+Show:
+- Temperature monitoring.
+- Upper-threshold trigger.
+- Peltier ON.
+- Lower-threshold trigger.
+- Peltier OFF.
+- Sensor or over-temperature fault shutdown.
+
+Do not insert unverified threshold values.
+
+#### D. Distinctive Engineering Insight
+
+Give this statement visual prominence:
+
+**The Peltier module does not destroy heat. It transfers heat from its cold side to its hot side, where the heat must be rejected.**
+
+This should be a clearly visible engineering insight, not hidden in small text.
+
+---
+
+### COLUMN 3 — SIMULATION, ECONOMICS AND VALIDATION
+
+#### A. Quantitative Simulation
+
+Present the reference-case model and its assumptions.
+
+Include the following only after recalculating and confirming them against the report:
+
+- PCM mass.
+- Assumed latent heat.
+- Available latent thermal reserve.
+- Assumed passive baseline.
+- Target duration.
+- Additional cooling duration.
+- Required supplementary cooling energy.
+- Peltier electrical input.
+- Assumed coefficient of performance.
+- Auxiliary electrical consumption.
+- Total energy demand.
+- Calculated battery capacity.
+
+Use a visually strong numerical results section.
+
+The approximately 72-hour baseline and 110-hour target must be shown as:
+
+**72 h — Planning baseline**
+
+**110 h — Design target**
+
+Do not visually suggest that the target has been achieved.
+
+#### B. Energy Analysis
+
+Create a clean energy-flow graphic explaining:
+
+Electrical input → Peltier heat pumping → cold-side heat removal + hot-side heat rejection.
+
+Show the calculated energy requirement and battery-sizing estimate.
+
+Make the assumptions visible in a short note.
+
+#### C. Graph
+
+Include a professionally styled graph based on the actual reference-case simulation in the report.
+
+Graph title:
+
+**Modelled Thermal-Energy Balance: PCM-Only vs Hybrid Cooling**
+
+Clearly label:
+- Time.
+- Thermal energy.
+- Assumed PCM reserve.
+- Baseline reference.
+- Design target.
+
+Label the chart:
+
+*Scenario simulation — not experimental measurements.*
+
+Do not fabricate temperature readings or experimental curves.
+
+#### D. Economic Feasibility
+
+Include a compact financial summary:
+
+- Estimated prototype cost.
+- Major cost drivers.
+- Battery cost.
+- Peltier subsystem cost.
+- PCM and enclosure cost.
+- Indicative operating-energy cost.
+
+Distinguish actual online-listed prices from provisional cost allowances.
+
+Use INR throughout.
+
+Do not invent price savings or return on investment.
+
+If space is limited, show the overall estimated budget and three major cost drivers rather than cramming in the entire bill of materials.
+
+#### E. Experimental Validation
+
+Briefly explain the proposed controlled comparison:
+
+**Configuration A:** PCM-only.
+
+**Configuration B:** PCM + sensor-triggered Peltier.
+
+Evaluate:
+- Time within target temperature band.
+- Temperature variation.
+- Electrical energy consumed.
+- Peltier duty cycle.
+- Hot-side temperature.
+- Trial-to-trial repeatability.
+
+Clearly indicate that experimental validation is pending wherever actual results are unavailable.
+
+---
+
+## 6. BOTTOM SECTION — ENGINEERING LIMITATIONS AND FUTURE WORK
+
+Create a slim but meaningful full-width bottom strip.
+
+### Current engineering challenges
+
+- Thermoelectric conversion efficiency.
+- Hot-side heat rejection.
+- Battery energy requirements.
+- Liquid-path implementation.
+- Thermal contact resistance.
+- PCM selection and conditioning.
+- Sensor calibration.
+- Temperature uniformity.
+
+### Future development
+
+- Optimised heat exchanger.
+- Improved PCM selection.
+- Lower-power control.
+- Better thermal insulation.
+- Multi-point sensing.
+- Extended experimental validation.
+- Medical cold-chain compliance testing.
+
+Include a compact references section containing 4–6 genuine, relevant sources from the report.
+
+Do not invent references or DOI numbers.
+
+## 7. VISUAL ASSETS — MAKE THEM ORIGINAL
+
+Generate or draw original diagrams rather than relying on random internet images.
+
+The poster should contain:
+
+1. One dominant cutaway system illustration.
+2. One thermal-flow diagram.
+3. One compact operational flowchart.
+4. One simulation graph.
+5. One compact financial summary.
+
+These visuals should communicate the concept without requiring the reader to study long paragraphs.
+
+Make sure all diagrams use the same visual language, colours, labels and component terminology.
+
+## 8. CRITICAL SCIENTIFIC INTEGRITY RULES
+
+This project contains both an engineering concept and a mathematical reference-case simulation.
+
+Maintain the distinctions between:
+
+- Proposed architecture.
+- Engineering assumptions.
+- Calculated estimates.
+- Simulation outputs.
+- Actual prototype measurements.
+- Future experimental objectives.
+
+Never:
+- Present 110 hours as achieved.
+- Present simulated values as test results.
+- Invent a measured temperature graph.
+- Invent a working prototype photograph.
+- Claim certified vaccine-storage capability.
+- Claim that the Peltier system is energy-free.
+- Claim that the liquid chamber can continuously reject heat without an external heat exchanger.
+- Fabricate costs, references or performance claims.
+
+Use the phrases:
+
+**SIMULATED / MODELLED RESULT**
+
+**ENGINEERING TARGET**
+
+**EXPERIMENTAL VALIDATION PENDING**
+
+where appropriate.
+
+The poster should be impressive because of the engineering, not exaggerated claims.
+
+## 9. FINAL QUALITY CONTROL
+
+Before export:
+
+- Verify all numerical calculations.
+- Check consistency with the attached project report.
+- Check all four participant names.
+- Check spelling and grammar.
+- Check every diagram label.
+- Check units.
+- Check graph axes.
+- Confirm that simulated values are visibly identified.
+- Confirm that text is legible at actual A3 size.
+- Confirm that all elements fit within print margins.
+- Check the final PDF at 100% zoom.
+- Ensure the page count is exactly one.
+
+## 10. FINAL OUTPUT
+
+Save as:
+
+**SANJIVANI_A3_SCIENCE_FAIR_POSTER.pdf**
+
+Deliver:
+1. One-page A3 landscape PDF.
+2. A high-resolution PNG preview.
+3. An editable source file if the design software supports it.
+
+The finished poster should look like a polished international science-fair engineering project display — visually strong, technically credible, data-driven and immediately understandable to judges walking past the display.
+
+**The system architecture illustration should be the visual hero. The quantitative analysis should establish credibility. The research question should establish purpose. The design should make SANJIVANI memorable.**
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-11-12T19:21:22+05:30.
+</ADDITIONAL_METADATA>
