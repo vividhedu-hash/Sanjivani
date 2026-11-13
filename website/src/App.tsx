@@ -11,6 +11,8 @@ import { ImpactSection } from './components/ImpactSection';
 import { TestingValidationSection } from './components/TestingValidationSection';
 import { FutureTeamSection } from './components/FutureTeamSection';
 import { PresentationModal } from './components/PresentationModal';
+import { OrbitalRadarHUD } from './components/OrbitalRadarHUD';
+import { Curved3DCarousel } from './components/Curved3DCarousel';
 import { sound } from './utils/soundEffects';
 import { CHAPTERS } from './data/sanjivaniData';
 
@@ -86,13 +88,43 @@ export const App: React.FC = () => {
           </div>
         );
       case 5:
-        return <SystemThinkingSection isSlideMode={true} />;
+        return (
+          <div className="space-y-4">
+            <div className="text-center mb-1">
+              <span className="text-[10px] font-mono text-[#0F766E] uppercase tracking-widest font-bold">
+                ORBITAL CLOSED-LOOP ARCHITECTURE
+              </span>
+              <h2 className="font-serif-display text-2xl sm:text-3xl font-bold text-[#0B2545] mt-0.5">
+                Quad-Subsystem Closed-Loop Radar HUD
+              </h2>
+            </div>
+            <OrbitalRadarHUD isSlideMode={true} />
+            <div className="mt-4">
+              <SystemThinkingSection isSlideMode={true} />
+            </div>
+          </div>
+        );
       case 6:
         return <ScienceBehindSection isSlideMode={true} />;
       case 7:
         return <NumbersDashboard isSlideMode={true} />;
       case 8:
-        return <ImpactSection isSlideMode={true} />;
+        return (
+          <div className="space-y-4">
+            <div className="text-center mb-1">
+              <span className="text-[10px] font-mono text-[#0F766E] uppercase tracking-widest font-bold">
+                3D CYLINDRICAL DEPLOYMENT HORIZONS
+              </span>
+              <h2 className="font-serif-display text-2xl sm:text-3xl font-bold text-[#0B2545] mt-0.5">
+                Stress-Testing Across India's Microclimates
+              </h2>
+            </div>
+            <Curved3DCarousel isSlideMode={true} />
+            <div className="mt-4">
+              <ImpactSection isSlideMode={true} />
+            </div>
+          </div>
+        );
       case 9:
         return <TestingValidationSection isSlideMode={true} />;
       case 10:
@@ -194,8 +226,26 @@ export const App: React.FC = () => {
           <section 
             id="chapter-05" 
             ref={el => { sectionRefs.current[5] = el; }}
-            className="w-full scroll-mt-24"
+            className="w-full scroll-mt-24 space-y-6"
           >
+            <div className="max-w-3xl mb-2">
+              <div className="flex items-center gap-2">
+                <span className="px-2.5 py-0.5 rounded text-[11px] font-mono uppercase bg-teal-50 text-[#0F766E] border border-teal-200 font-bold">
+                  Chapter 05 • System Dynamics
+                </span>
+                <span className="text-xs font-mono text-[#0F766E]">
+                  Quad-Subsystem Closed-Loop Telemetry
+                </span>
+              </div>
+              <h2 className="font-serif-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B2545] mt-2 leading-tight">
+                How the system thinks.
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base mt-2">
+                Interactive 360° orbital telemetry radar coordinating solid-state thermoelectric heat pumping, latent bio-PCM isothermal buffering, digital hysteresis polling, and LiFePO4 battery power.
+              </p>
+            </div>
+
+            <OrbitalRadarHUD />
             <SystemThinkingSection />
           </section>
 
@@ -221,8 +271,26 @@ export const App: React.FC = () => {
           <section 
             id="chapter-08" 
             ref={el => { sectionRefs.current[8] = el; }}
-            className="w-full scroll-mt-24"
+            className="w-full scroll-mt-24 space-y-6"
           >
+            <div className="max-w-3xl mb-2">
+              <div className="flex items-center gap-2">
+                <span className="px-2.5 py-0.5 rounded text-[11px] font-mono uppercase bg-teal-50 text-[#0F766E] border border-teal-200 font-bold">
+                  Chapter 08 • Field Deployment Horizons
+                </span>
+                <span className="text-xs font-mono text-[#0F766E]">
+                  3D Cylindrical Microclimate Stress-Testing
+                </span>
+              </div>
+              <h2 className="font-serif-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B2545] mt-2 leading-tight">
+                Real-world impact across India.
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base mt-2">
+                Spin through our cylindrical 3D deployment horizons—from the 45°C Thar Desert heatwaves to -14°C Himalayan passes and monsoonal rural outreach.
+              </p>
+            </div>
+
+            <Curved3DCarousel />
             <ImpactSection />
           </section>
 
