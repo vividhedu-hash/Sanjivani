@@ -1,0 +1,12 @@
+{
+  "name": "sanjivani-medical-cold-chain",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SANJIVANI - Sensor-Triggered Hybrid PCM–Peltier Medical Cold-Chain Storage System",
+  "scripts": {
+    "build": "npm --prefix website run build",
+    "dev": "npm --prefix website run dev",
+    "preview": "npm --prefix website run preview",
+    "start": "npm --prefix website run preview"
+  }
+}
