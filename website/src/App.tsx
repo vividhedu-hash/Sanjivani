@@ -13,6 +13,7 @@ import { FutureTeamSection } from './components/FutureTeamSection';
 import { PresentationModal } from './components/PresentationModal';
 import { OrbitalRadarHUD } from './components/OrbitalRadarHUD';
 import { Curved3DCarousel } from './components/Curved3DCarousel';
+import { KeynotePresentationDeck } from './components/KeynotePresentationDeck';
 import { sound } from './utils/soundEffects';
 import { CHAPTERS } from './data/sanjivaniData';
 
@@ -77,10 +78,10 @@ export const App: React.FC = () => {
         return (
           <div className="space-y-2">
             <div className="text-center mb-1">
-              <span className="text-[10px] font-mono text-[#0F766E] uppercase tracking-widest font-bold">
+              <span className="text-[10px] font-mono text-teal-400 uppercase tracking-widest font-bold">
                 HERO ENGINEERING CUTAWAY
               </span>
-              <h2 className="font-serif-display text-2xl sm:text-3xl font-bold text-[#0B2545] mt-0.5">
+              <h2 className="font-serif-display text-2xl sm:text-3xl font-bold text-white mt-0.5">
                 Explore The 3D System Architecture
               </h2>
             </div>
@@ -91,10 +92,10 @@ export const App: React.FC = () => {
         return (
           <div className="space-y-4">
             <div className="text-center mb-1">
-              <span className="text-[10px] font-mono text-[#0F766E] uppercase tracking-widest font-bold">
+              <span className="text-[10px] font-mono text-teal-400 uppercase tracking-widest font-bold">
                 ORBITAL CLOSED-LOOP ARCHITECTURE
               </span>
-              <h2 className="font-serif-display text-2xl sm:text-3xl font-bold text-[#0B2545] mt-0.5">
+              <h2 className="font-serif-display text-2xl sm:text-3xl font-bold text-white mt-0.5">
                 Quad-Subsystem Closed-Loop Radar HUD
               </h2>
             </div>
@@ -112,10 +113,10 @@ export const App: React.FC = () => {
         return (
           <div className="space-y-4">
             <div className="text-center mb-1">
-              <span className="text-[10px] font-mono text-[#0F766E] uppercase tracking-widest font-bold">
+              <span className="text-[10px] font-mono text-teal-400 uppercase tracking-widest font-bold">
                 3D CYLINDRICAL DEPLOYMENT HORIZONS
               </span>
-              <h2 className="font-serif-display text-2xl sm:text-3xl font-bold text-[#0B2545] mt-0.5">
+              <h2 className="font-serif-display text-2xl sm:text-3xl font-bold text-white mt-0.5">
                 Stress-Testing Across India's Microclimates
               </h2>
             </div>
@@ -148,7 +149,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] selection:bg-[#0F766E] selection:text-white relative">
+    <div className="min-h-screen bg-[#060B14] text-slate-100 selection:bg-teal-500 selection:text-white relative">
       
       {/* Sticky Global Navigation */}
       <Navbar
@@ -174,6 +175,34 @@ export const App: React.FC = () => {
             onExplore={() => scrollToChapter(2)}
             onEnterPresentation={() => setIsPresentationOpen(true)}
           />
+        </section>
+
+        {/* Featured Keynote Pitch Deck Section (Auto-Click Step Presentation) */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="mb-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-gradient-to-r from-[#08111E] via-[#0B1526] to-[#08111E] p-4 sm:p-5 rounded-2xl border border-teal-500/40 shadow-2xl backdrop-blur-xl">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+                <span className="font-mono text-xs uppercase tracking-wider text-teal-300 font-bold">
+                  AUTOCLICK KEYNOTE PRESENTATION • 14 CHAPTERS
+                </span>
+              </div>
+              <h2 className="font-serif-display text-xl sm:text-2xl font-bold text-white mt-1">
+                Interactive Balvigyan Presentation Deck
+              </h2>
+              <p className="text-xs text-slate-400 mt-0.5">
+                Click anywhere on the slide canvas or hit <kbd className="px-1.5 py-0.5 rounded bg-slate-800 text-teal-300 font-mono text-[10px]">Space</kbd> / <kbd className="px-1.5 py-0.5 rounded bg-slate-800 text-teal-300 font-mono text-[10px]">→</kbd> to step through animations, or press <strong className="text-amber-400">AUTO-PLAY</strong> to watch like a video!
+              </p>
+            </div>
+            <button
+              onClick={() => setIsPresentationOpen(true)}
+              className="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-mono text-xs font-bold transition-all shadow-lg shadow-teal-950/60 flex items-center gap-2 cursor-pointer shrink-0"
+            >
+              <span>FULLSCREEN KEYNOTE</span>
+            </button>
+          </div>
+
+          <KeynotePresentationDeck />
         </section>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-20 sm:space-y-28">
@@ -204,18 +233,18 @@ export const App: React.FC = () => {
           >
             <div className="max-w-3xl mb-2">
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded text-[11px] font-mono uppercase bg-teal-50 text-[#0F766E] border border-teal-200 font-bold">
+                <span className="px-2.5 py-0.5 rounded text-[11px] font-mono uppercase bg-teal-950 text-teal-300 border border-teal-500/40 font-bold">
                   Chapter 04 • The Visual Hero
                 </span>
-                <span className="text-xs font-mono text-[#0F766E]">
-                  Interactive 3D Cutaway System
+                <span className="text-xs font-mono text-teal-400">
+                  Interactive 3D Cutaway System & Exploded View
                 </span>
               </div>
-              <h2 className="font-serif-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B2545] mt-2 leading-tight">
+              <h2 className="font-serif-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-2 leading-tight">
                 Explore the engineering.
               </h2>
-              <p className="text-slate-600 text-sm sm:text-base mt-2">
-                Rotate, slice, and inspect the 13 integrated subsystems of SANJIVANI. Observe the cold-side extraction pathway, closed liquid loop, and forced ambient heat dissipation.
+              <p className="text-slate-400 text-sm sm:text-base mt-2">
+                Rotate, slice, and explode the 13 integrated subsystems of SANJIVANI with the interactive exploded view slider. Observe the cold-side extraction pathway, closed liquid loop, and forced ambient heat dissipation.
               </p>
             </div>
 
@@ -230,17 +259,17 @@ export const App: React.FC = () => {
           >
             <div className="max-w-3xl mb-2">
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded text-[11px] font-mono uppercase bg-teal-50 text-[#0F766E] border border-teal-200 font-bold">
+                <span className="px-2.5 py-0.5 rounded text-[11px] font-mono uppercase bg-teal-950 text-teal-300 border border-teal-500/40 font-bold">
                   Chapter 05 • System Dynamics
                 </span>
-                <span className="text-xs font-mono text-[#0F766E]">
+                <span className="text-xs font-mono text-teal-400">
                   Quad-Subsystem Closed-Loop Telemetry
                 </span>
               </div>
-              <h2 className="font-serif-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B2545] mt-2 leading-tight">
+              <h2 className="font-serif-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-2 leading-tight">
                 How the system thinks.
               </h2>
-              <p className="text-slate-600 text-sm sm:text-base mt-2">
+              <p className="text-slate-400 text-sm sm:text-base mt-2">
                 Interactive 360° orbital telemetry radar coordinating solid-state thermoelectric heat pumping, latent bio-PCM isothermal buffering, digital hysteresis polling, and LiFePO4 battery power.
               </p>
             </div>
@@ -275,17 +304,17 @@ export const App: React.FC = () => {
           >
             <div className="max-w-3xl mb-2">
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded text-[11px] font-mono uppercase bg-teal-50 text-[#0F766E] border border-teal-200 font-bold">
+                <span className="px-2.5 py-0.5 rounded text-[11px] font-mono uppercase bg-teal-950 text-teal-300 border border-teal-500/40 font-bold">
                   Chapter 08 • Field Deployment Horizons
                 </span>
-                <span className="text-xs font-mono text-[#0F766E]">
+                <span className="text-xs font-mono text-teal-400">
                   3D Cylindrical Microclimate Stress-Testing
                 </span>
               </div>
-              <h2 className="font-serif-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B2545] mt-2 leading-tight">
+              <h2 className="font-serif-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-2 leading-tight">
                 Real-world impact across India.
               </h2>
-              <p className="text-slate-600 text-sm sm:text-base mt-2">
+              <p className="text-slate-400 text-sm sm:text-base mt-2">
                 Spin through our cylindrical 3D deployment horizons—from the 45°C Thar Desert heatwaves to -14°C Himalayan passes and monsoonal rural outreach.
               </p>
             </div>

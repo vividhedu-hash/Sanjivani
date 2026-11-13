@@ -140,27 +140,27 @@ export const SystemThinkingSection: React.FC<SystemThinkingSectionProps> = ({ is
   };
 
   return (
-    <div className={`w-full bg-white rounded-2xl border border-slate-200 shadow-xl ${
+    <div className={`w-full bg-[#08111E]/95 backdrop-blur-xl rounded-2xl border border-slate-800 shadow-2xl ${
       isSlideMode ? 'p-5' : 'p-6 md:p-8'
     }`}>
       
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-slate-200 gap-3">
+      <div className="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-slate-800 gap-3">
         <div>
           <div className="flex items-center gap-2">
-            <span className="px-2.5 py-0.5 rounded text-[11px] font-mono uppercase bg-teal-50 text-[#0F766E] border border-teal-200 font-bold">
-              Closed-Loop Control Simulation
+            <span className="px-2.5 py-0.5 rounded text-[11px] font-mono uppercase bg-teal-500/10 text-teal-300 border border-teal-500/30 font-bold">
+              Closed-Loop Hysteresis Simulation
             </span>
-            <span className="text-xs font-mono text-slate-500">
+            <span className="text-xs font-mono text-slate-400">
               Sampling Rate: 10 Hz (DS18B20 1-Wire)
             </span>
           </div>
-          <h3 className={`font-serif-display font-bold text-[#0B2545] mt-1 ${
+          <h3 className={`font-serif-display font-bold text-white mt-1 ${
             isSlideMode ? 'text-2xl sm:text-3xl' : 'text-2xl md:text-3xl'
           }`}>
             How The System Thinks: Cooling Only When Necessary
           </h3>
-          <p className="text-slate-600 text-xs sm:text-sm mt-0.5 max-w-2xl">
+          <p className="text-slate-300 text-xs sm:text-sm mt-0.5 max-w-2xl">
             Instead of continuous active refrigeration, SANJIVANI lets passive bio-PCM absorb baseline thermal ingress and activates solid-state heat pumping solely when chamber temperature hits the trigger threshold.
           </p>
         </div>
@@ -169,10 +169,10 @@ export const SystemThinkingSection: React.FC<SystemThinkingSectionProps> = ({ is
         <div className="flex items-center gap-2">
           <button
             onClick={() => { setIsPaused(!isPaused); sound.click(); }}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5 border transition-all ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5 border transition-all cursor-pointer ${
               isPaused 
-                ? 'bg-emerald-600 hover:bg-emerald-700 text-white border-emerald-600' 
-                : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border-slate-200'
+                ? 'bg-emerald-600 hover:bg-emerald-500 text-white border-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.3)]' 
+                : 'bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700'
             }`}
           >
             {isPaused ? <Play className="w-3.5 h-3.5" /> : <Pause className="w-3.5 h-3.5" />}
@@ -186,14 +186,14 @@ export const SystemThinkingSection: React.FC<SystemThinkingSectionProps> = ({ is
               setSimSpeed(speeds[nextIdx]);
               sound.click();
             }}
-            className="px-2.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 text-xs font-mono border border-slate-200 font-semibold"
+            className="px-2.5 py-1.5 rounded-lg bg-slate-800 text-slate-200 hover:bg-slate-700 text-xs font-mono border border-slate-700 font-semibold cursor-pointer"
           >
             {simSpeed}× Speed
           </button>
 
           <button
             onClick={resetSimulation}
-            className="p-1.5 rounded-lg bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200 transition-colors"
+            className="p-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white border border-slate-700 transition-colors cursor-pointer"
             title="Reset Simulation"
           >
             <RotateCcw className="w-4 h-4" />
@@ -211,135 +211,135 @@ export const SystemThinkingSection: React.FC<SystemThinkingSectionProps> = ({ is
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
             {/* Core Temp */}
             <div className={`p-3 rounded-xl border transition-all ${
-              isSensorFault ? 'bg-rose-50 border-rose-300 animate-pulse' :
-              currentTemp > 8.0 ? 'bg-rose-50 border-rose-300' :
-              peltierActive ? 'bg-cyan-50 border-cyan-300' :
-              'bg-slate-50 border-slate-200'
+              isSensorFault ? 'bg-rose-950/40 border-rose-500/50 animate-pulse' :
+              currentTemp > 8.0 ? 'bg-rose-950/40 border-rose-500/50' :
+              peltierActive ? 'bg-cyan-950/40 border-cyan-500/50 shadow-[0_0_15px_rgba(6,182,212,0.2)]' :
+              'bg-[#0B1528] border-slate-800'
             }`}>
-              <div className="flex items-center justify-between text-slate-500 text-[11px] font-mono">
+              <div className="flex items-center justify-between text-slate-400 text-[11px] font-mono">
                 <span>CHAMBER TEMP</span>
-                <Activity className="w-3.5 h-3.5 text-[#0F766E]" />
+                <Activity className="w-3.5 h-3.5 text-teal-400" />
               </div>
               <div className="flex items-baseline gap-1 mt-0.5">
                 <span className={`text-2xl font-mono font-bold ${
-                  isSensorFault ? 'text-rose-600' :
-                  currentTemp > 8.0 ? 'text-rose-600' :
-                  peltierActive ? 'text-cyan-700' : 'text-emerald-700'
+                  isSensorFault ? 'text-rose-400' :
+                  currentTemp > 8.0 ? 'text-rose-400' :
+                  peltierActive ? 'text-cyan-300' : 'text-emerald-400'
                 }`}>
                   {isSensorFault ? '--.-' : currentTemp.toFixed(1)}
                 </span>
-                <span className="text-xs text-slate-500 font-mono">°C</span>
+                <span className="text-xs text-slate-400 font-mono">°C</span>
               </div>
-              <div className="text-[10px] font-mono text-slate-500 truncate">
+              <div className="text-[10px] font-mono text-slate-400 truncate">
                 Target: +2°C to +8°C
               </div>
             </div>
 
             {/* Peltier State */}
             <div className={`p-3 rounded-xl border transition-all ${
-              isSensorFault ? 'bg-rose-50 border-rose-300' :
-              peltierActive ? 'bg-cyan-50 border-cyan-300 text-cyan-800' :
-              'bg-slate-50 border-slate-200 text-slate-700'
+              isSensorFault ? 'bg-rose-950/40 border-rose-500/50' :
+              peltierActive ? 'bg-cyan-950/40 border-cyan-500/50 text-cyan-200 shadow-[0_0_15px_rgba(6,182,212,0.2)]' :
+              'bg-[#0B1528] border-slate-800 text-slate-300'
             }`}>
-              <div className="flex items-center justify-between text-[11px] font-mono text-slate-500">
+              <div className="flex items-center justify-between text-[11px] font-mono text-slate-400">
                 <span>PELTIER STATE</span>
                 <Cpu className="w-3.5 h-3.5" />
               </div>
               <div className="text-sm font-mono font-bold mt-1 uppercase flex items-center gap-1">
                 {isSensorFault ? (
-                  <span className="text-rose-600 flex items-center gap-1">
+                  <span className="text-rose-400 flex items-center gap-1">
                     <AlertOctagon className="w-3.5 h-3.5" /> FAIL-SAFE CUT
                   </span>
                 ) : peltierActive ? (
-                  <span className="text-cyan-700 flex items-center gap-1">
-                    <Snowflake className="w-3.5 h-3.5 animate-spin" /> ACTIVE (34W)
+                  <span className="text-cyan-300 flex items-center gap-1">
+                    <Snowflake className="w-3.5 h-3.5 animate-spin" /> ACTIVE (30W)
                   </span>
                 ) : (
-                  <span className="text-emerald-700 flex items-center gap-1">
-                    <CheckCircle className="w-3.5 h-3.5 text-emerald-600" /> PCM STANDBY
+                  <span className="text-emerald-400 flex items-center gap-1">
+                    <CheckCircle className="w-3.5 h-3.5 text-emerald-400" /> PCM STANDBY
                   </span>
                 )}
               </div>
-              <div className="text-[10px] font-mono text-slate-500">
+              <div className="text-[10px] font-mono text-slate-400">
                 {peltierActive ? 'Extracting 18.5W' : 'Idle Drain: 0.15W'}
               </div>
             </div>
 
             {/* Ambient Condition */}
-            <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-              <div className="flex items-center justify-between text-slate-500 text-[11px] font-mono">
+            <div className="p-3 rounded-xl bg-[#0B1528] border border-slate-800">
+              <div className="flex items-center justify-between text-slate-400 text-[11px] font-mono">
                 <span>AMBIENT TEMP</span>
-                <Flame className="w-3.5 h-3.5 text-amber-500" />
+                <Flame className="w-3.5 h-3.5 text-amber-400" />
               </div>
               <div className="flex items-baseline gap-1 mt-0.5">
-                <span className="text-2xl font-mono font-bold text-amber-700">
+                <span className="text-2xl font-mono font-bold text-amber-400">
                   {ambientTemp.toFixed(1)}
                 </span>
-                <span className="text-xs text-slate-500 font-mono">°C</span>
+                <span className="text-xs text-slate-400 font-mono">°C</span>
               </div>
-              <div className="text-[10px] font-mono text-slate-500 uppercase">
+              <div className="text-[10px] font-mono text-slate-400 uppercase">
                 {ambientScenario}
               </div>
             </div>
 
             {/* Active Runtime */}
-            <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-              <div className="flex items-center justify-between text-slate-500 text-[11px] font-mono">
+            <div className="p-3 rounded-xl bg-[#0B1528] border border-slate-800">
+              <div className="flex items-center justify-between text-slate-400 text-[11px] font-mono">
                 <span>ACTIVE RUNTIME</span>
-                <Zap className="w-3.5 h-3.5 text-indigo-500" />
+                <Zap className="w-3.5 h-3.5 text-teal-400" />
               </div>
               <div className="flex items-baseline gap-1 mt-0.5">
-                <span className="text-2xl font-mono font-bold text-indigo-700">
+                <span className="text-2xl font-mono font-bold text-teal-300">
                   {activeHoursTotal.toFixed(1)}
                 </span>
-                <span className="text-xs text-slate-500 font-mono">h</span>
+                <span className="text-xs text-slate-400 font-mono">h</span>
               </div>
-              <div className="text-[10px] font-mono text-slate-500">
+              <div className="text-[10px] font-mono text-slate-400">
                 Duty: {((activeHoursTotal / Math.max(1, elapsedHours)) * 100).toFixed(1)}% (≤8%)
               </div>
             </div>
           </div>
 
           {/* Dynamic SVG Waveform & Hysteresis Chart */}
-          <div className="bg-slate-50 rounded-xl p-3.5 border border-slate-200 relative">
+          <div className="bg-[#0B1528]/80 rounded-xl p-3.5 border border-slate-800 relative">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-3">
-                <span className="text-xs font-mono font-bold text-[#0B2545] uppercase">
+                <span className="text-xs font-mono font-bold text-slate-200 uppercase tracking-wider">
                   Thermal Waveform (T vs Time)
                 </span>
-                <span className="flex items-center gap-1 text-[11px] font-mono text-[#0F766E] font-semibold">
-                  <span className="w-2.5 h-0.5 bg-[#0F766E] inline-block"></span> Chamber T
+                <span className="flex items-center gap-1 text-[11px] font-mono text-teal-300 font-semibold">
+                  <span className="w-2.5 h-0.5 bg-teal-400 inline-block shadow-[0_0_8px_#14B8A6]"></span> Chamber T
                 </span>
-                <span className="flex items-center gap-1 text-[11px] font-mono text-amber-600 font-semibold">
-                  <span className="w-2.5 h-0.5 bg-amber-500 inline-block"></span> Ambient T
+                <span className="flex items-center gap-1 text-[11px] font-mono text-amber-400 font-semibold">
+                  <span className="w-2.5 h-0.5 bg-amber-400 inline-block"></span> Ambient T
                 </span>
               </div>
-              <div className="text-[11px] font-mono text-slate-500">
+              <div className="text-[11px] font-mono text-slate-400">
                 Safe Band: +2°C to +8°C
               </div>
             </div>
 
             {/* Chart SVG */}
-            <div className="w-full h-[180px] sm:h-[210px] relative bg-white rounded-lg border border-slate-200">
+            <div className="w-full h-[180px] sm:h-[210px] relative bg-[#060B14] rounded-lg border border-slate-800 overflow-hidden">
               <svg className="w-full h-full" viewBox="0 0 600 220" preserveAspectRatio="none">
                 {/* Safe Corridor Zone */}
-                <rect x="0" y={200 - (8.0 / 45.0) * 190} width="600" height={(6.0 / 45.0) * 190} fill="#10b981" fillOpacity="0.12" />
+                <rect x="0" y={200 - (8.0 / 45.0) * 190} width="600" height={(6.0 / 45.0) * 190} fill="#10b981" fillOpacity="0.08" />
                 
                 {/* Upper Limit +8°C Line */}
-                <line x1="0" y1={200 - (8.0 / 45.0) * 190} x2="600" y2={200 - (8.0 / 45.0) * 190} stroke="#dc2626" strokeDasharray="4 4" strokeWidth="1.2" />
-                <text x="5" y={195 - (8.0 / 45.0) * 190} fill="#dc2626" fontSize="9" fontFamily="monospace" fontWeight="bold">+8.0°C Critical Breach</text>
+                <line x1="0" y1={200 - (8.0 / 45.0) * 190} x2="600" y2={200 - (8.0 / 45.0) * 190} stroke="#f43f5e" strokeDasharray="4 4" strokeWidth="1.2" opacity="0.8" />
+                <text x="5" y={195 - (8.0 / 45.0) * 190} fill="#f43f5e" fontSize="9" fontFamily="monospace" fontWeight="bold">+8.0°C Critical Breach</text>
 
                 {/* Lower Limit +2°C Line */}
-                <line x1="0" y1={200 - (2.0 / 45.0) * 190} x2="600" y2={200 - (2.0 / 45.0) * 190} stroke="#0284c7" strokeDasharray="4 4" strokeWidth="1.2" />
-                <text x="5" y={212 - (2.0 / 45.0) * 190} fill="#0284c7" fontSize="9" fontFamily="monospace" fontWeight="bold">+2.0°C Freezing Limit</text>
+                <line x1="0" y1={200 - (2.0 / 45.0) * 190} x2="600" y2={200 - (2.0 / 45.0) * 190} stroke="#38bdf8" strokeDasharray="4 4" strokeWidth="1.2" opacity="0.8" />
+                <text x="5" y={212 - (2.0 / 45.0) * 190} fill="#38bdf8" fontSize="9" fontFamily="monospace" fontWeight="bold">+2.0°C Freezing Limit</text>
 
                 {/* Upper Hysteresis Trigger Line */}
-                <line x1="0" y1={200 - (tUpper / 45.0) * 190} x2="600" y2={200 - (tUpper / 45.0) * 190} stroke="#d97706" strokeDasharray="2 3" strokeWidth="1.2" />
-                <text x="490" y={195 - (tUpper / 45.0) * 190} fill="#d97706" fontSize="9" fontFamily="monospace" fontWeight="bold">ON: +{tUpper}°C</text>
+                <line x1="0" y1={200 - (tUpper / 45.0) * 190} x2="600" y2={200 - (tUpper / 45.0) * 190} stroke="#f59e0b" strokeDasharray="2 3" strokeWidth="1.2" />
+                <text x="490" y={195 - (tUpper / 45.0) * 190} fill="#f59e0b" fontSize="9" fontFamily="monospace" fontWeight="bold">ON: +{tUpper}°C</text>
 
                 {/* Lower Hysteresis Trigger Line */}
-                <line x1="0" y1={200 - (tLower / 45.0) * 190} x2="600" y2={200 - (tLower / 45.0) * 190} stroke="#0284c7" strokeDasharray="2 3" strokeWidth="1.2" />
-                <text x="490" y={212 - (tLower / 45.0) * 190} fill="#0284c7" fontSize="9" fontFamily="monospace" fontWeight="bold">OFF: +{tLower}°C</text>
+                <line x1="0" y1={200 - (tLower / 45.0) * 190} x2="600" y2={200 - (tLower / 45.0) * 190} stroke="#2dd4bf" strokeDasharray="2 3" strokeWidth="1.2" />
+                <text x="490" y={212 - (tLower / 45.0) * 190} fill="#2dd4bf" fontSize="9" fontFamily="monospace" fontWeight="bold">OFF: +{tLower}°C</text>
 
                 {/* Ambient Waveform */}
                 {history.length > 1 && (
@@ -350,10 +350,10 @@ export const SystemThinkingSection: React.FC<SystemThinkingSectionProps> = ({ is
                       return i === 0 ? `M ${x} ${y}` : `${acc} L ${x} ${y}`;
                     }, '')}
                     fill="none"
-                    stroke="#d97706"
+                    stroke="#f59e0b"
                     strokeWidth="1.8"
                     strokeDasharray="4 2"
-                    opacity="0.75"
+                    opacity="0.65"
                   />
                 )}
 
@@ -366,8 +366,9 @@ export const SystemThinkingSection: React.FC<SystemThinkingSectionProps> = ({ is
                       return i === 0 ? `M ${x} ${y}` : `${acc} L ${x} ${y}`;
                     }, '')}
                     fill="none"
-                    stroke="#0F766E"
+                    stroke="#14B8A6"
                     strokeWidth="2.8"
+                    className="drop-shadow-[0_0_8px_rgba(20,184,166,0.5)]"
                   />
                 )}
 
@@ -376,15 +377,15 @@ export const SystemThinkingSection: React.FC<SystemThinkingSectionProps> = ({ is
                   if (!pt.state || i === 0) return null;
                   const x = (i / (history.length - 1)) * 600;
                   return (
-                    <rect key={i} x={x - 6} y="150" width="12" height="45" fill="#0284c7" fillOpacity="0.18" />
+                    <rect key={i} x={x - 6} y="150" width="12" height="45" fill="#38bdf8" fillOpacity="0.25" />
                   );
                 })}
               </svg>
             </div>
 
-            <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 pt-2 border-t border-slate-200 mt-2">
+            <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-800/80 mt-2">
               <span>Time Horizon: Past 45 Evaluation Steps</span>
-              <span className="text-[#0F766E] font-semibold">Cyan Shaded Bands = Active Peltier Cooling</span>
+              <span className="text-cyan-300 font-semibold">Cyan Shaded Bands = Active Peltier Cooling</span>
             </div>
           </div>
 
@@ -393,13 +394,13 @@ export const SystemThinkingSection: React.FC<SystemThinkingSectionProps> = ({ is
         {/* Right 4 Cols: Interactive Controls */}
         <div className="lg:col-span-4 flex flex-col gap-3.5">
           
-          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col gap-3.5">
+          <div className="p-4 rounded-xl bg-[#0B1528] border border-slate-800 flex flex-col gap-3.5">
             <div className="flex items-center justify-between">
-              <h4 className="font-mono text-xs font-bold uppercase text-slate-800 flex items-center gap-1.5">
-                <Sliders className="w-3.5 h-3.5 text-[#0F766E]" />
+              <h4 className="font-mono text-xs font-bold uppercase text-slate-200 flex items-center gap-1.5">
+                <Sliders className="w-3.5 h-3.5 text-teal-400" />
                 Hysteresis Setpoints
               </h4>
-              <span className="text-[10px] font-mono text-slate-600 bg-white px-2 py-0.5 rounded border border-slate-200 font-semibold">
+              <span className="text-[10px] font-mono text-teal-300 bg-teal-950/60 px-2 py-0.5 rounded border border-teal-500/30 font-semibold">
                 ΔT = {(tUpper - tLower).toFixed(1)}°C
               </span>
             </div>
@@ -407,8 +408,8 @@ export const SystemThinkingSection: React.FC<SystemThinkingSectionProps> = ({ is
             {/* Upper Threshold */}
             <div>
               <div className="flex justify-between text-xs font-mono mb-1">
-                <span className="text-amber-800 font-semibold">Upper Trigger (Peltier ON)</span>
-                <span className="font-bold text-[#0B2545]">+{tUpper.toFixed(1)}°C</span>
+                <span className="text-amber-400 font-semibold">Upper Trigger (Peltier ON)</span>
+                <span className="font-bold text-amber-300">+{tUpper.toFixed(1)}°C</span>
               </div>
               <input
                 type="range"
@@ -417,18 +418,18 @@ export const SystemThinkingSection: React.FC<SystemThinkingSectionProps> = ({ is
                 step="0.1"
                 value={tUpper}
                 onChange={e => { setTUpper(parseFloat(e.target.value)); sound.click(); }}
-                className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-600"
+                className="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-amber-500"
               />
-              <span className="text-[10px] text-slate-500 block mt-0.5">
-                Recommended: +6.2°C (Leaves 1.8°C margin before breach)
+              <span className="text-[10px] text-slate-400 block mt-0.5">
+                Recommended: +5.8°C to +6.2°C (Leaves buffer before breach)
               </span>
             </div>
 
             {/* Lower Threshold */}
             <div>
               <div className="flex justify-between text-xs font-mono mb-1">
-                <span className="text-cyan-800 font-semibold">Lower Cutoff (Peltier OFF)</span>
-                <span className="font-bold text-[#0B2545]">+{tLower.toFixed(1)}°C</span>
+                <span className="text-cyan-400 font-semibold">Lower Cutoff (Peltier OFF)</span>
+                <span className="font-bold text-cyan-300">+{tLower.toFixed(1)}°C</span>
               </div>
               <input
                 type="range"
@@ -437,16 +438,16 @@ export const SystemThinkingSection: React.FC<SystemThinkingSectionProps> = ({ is
                 step="0.1"
                 value={tLower}
                 onChange={e => { setTLower(parseFloat(e.target.value)); sound.click(); }}
-                className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#0F766E]"
+                className="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-teal-400"
               />
-              <span className="text-[10px] text-slate-500 block mt-0.5">
-                Recommended: +3.8°C (Safely avoids 0°C to +2°C freeze shock)
+              <span className="text-[10px] text-slate-400 block mt-0.5">
+                Recommended: +2.8°C to +3.8°C (Safely avoids 0°C freeze shock)
               </span>
             </div>
 
             {/* Ambient Scenarios */}
             <div>
-              <span className="text-xs font-mono text-slate-700 font-semibold block mb-1">
+              <span className="text-xs font-mono text-slate-300 font-semibold block mb-1">
                 Ambient Heat Stress Scenario:
               </span>
               <div className="grid grid-cols-3 gap-1.5">
@@ -454,10 +455,10 @@ export const SystemThinkingSection: React.FC<SystemThinkingSectionProps> = ({ is
                   <button
                     key={scen}
                     onClick={() => { setAmbientScenario(scen); sound.click(); }}
-                    className={`px-2 py-1.5 rounded text-[11px] font-mono capitalize transition-colors cursor-pointer ${
+                    className={`px-2 py-1.5 rounded text-[11px] font-mono capitalize transition-colors cursor-pointer border ${
                       ambientScenario === scen
-                        ? 'bg-[#0F766E] text-white font-bold'
-                        : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
+                        ? 'bg-teal-500/20 text-teal-300 border-teal-500/50 font-bold shadow-[0_0_10px_rgba(20,184,166,0.2)]'
+                        : 'bg-slate-900 border-slate-700 text-slate-400 hover:text-slate-200 hover:bg-slate-800'
                     }`}
                   >
                     {scen === 'moderate' ? '32°C Const' : scen === 'diurnal' ? '28-42°C Diurnal' : '45°C Stress'}
@@ -469,21 +470,21 @@ export const SystemThinkingSection: React.FC<SystemThinkingSectionProps> = ({ is
 
           {/* Sensor Disconnection Fail-Safe Demo */}
           <div className={`p-4 rounded-xl border transition-all ${
-            isSensorFault ? 'bg-rose-50 border-rose-300' : 'bg-slate-50 border-slate-200'
+            isSensorFault ? 'bg-rose-950/40 border-rose-500/50 shadow-[0_0_20px_rgba(244,63,94,0.2)]' : 'bg-[#0B1528] border-slate-800'
           }`}>
             <div className="flex items-center justify-between">
-              <h4 className="font-mono text-xs font-bold uppercase text-slate-800 flex items-center gap-1.5">
-                <ShieldAlert className="w-3.5 h-3.5 text-rose-600" />
+              <h4 className="font-mono text-xs font-bold uppercase text-slate-200 flex items-center gap-1.5">
+                <ShieldAlert className="w-3.5 h-3.5 text-rose-400" />
                 Fail-Safe Engineering
               </h4>
               <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded ${
-                isSensorFault ? 'bg-rose-600 text-white animate-pulse' : 'bg-emerald-100 text-emerald-800 border border-emerald-300'
+                isSensorFault ? 'bg-rose-600 text-white animate-pulse' : 'bg-emerald-950/60 text-emerald-300 border border-emerald-500/30'
               }`}>
                 {isSensorFault ? 'FAULT ACTIVE' : 'NOMINAL'}
               </span>
             </div>
 
-            <p className="text-xs text-slate-600 mt-1.5 leading-snug">
+            <p className="text-xs text-slate-300 mt-1.5 leading-snug">
               What prevents the Peltier from running continuously and freezing sensitive vaccines if a temperature sensor disconnects?
             </p>
 
@@ -491,8 +492,8 @@ export const SystemThinkingSection: React.FC<SystemThinkingSectionProps> = ({ is
               onClick={toggleSensorFault}
               className={`w-full mt-2.5 py-2 px-3 rounded-lg text-xs font-mono font-bold transition-all flex items-center justify-center gap-2 cursor-pointer ${
                 isSensorFault
-                  ? 'bg-rose-600 hover:bg-rose-700 text-white shadow-sm'
-                  : 'bg-white hover:bg-slate-100 text-amber-800 border border-amber-300'
+                  ? 'bg-rose-600 hover:bg-rose-500 text-white shadow-[0_0_15px_rgba(244,63,94,0.4)]'
+                  : 'bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/30'
               }`}
             >
               <AlertOctagon className="w-4 h-4" />
@@ -500,10 +501,10 @@ export const SystemThinkingSection: React.FC<SystemThinkingSectionProps> = ({ is
             </button>
 
             {isSensorFault && (
-              <div className="mt-2 p-2 bg-white rounded border border-rose-200 text-[10px] font-mono text-rose-800 space-y-0.5">
-                <div>&gt; ERR 0x41: 1-WIRE TIMEOUT ON CORE PROBE</div>
-                <div>&gt; FAIL-SAFE ACTIVE: MOSFET GATE DRIVER PULLED LOW</div>
-                <div>&gt; PELTIER SHUT DOWN TO AVOID ACCIDENTAL FREEZING</div>
+              <div className="mt-2 p-2 bg-[#060B14] rounded border border-rose-500/40 text-[10px] font-mono text-rose-300 space-y-0.5">
+                <div>&gt; ERR 0x41: 1-WIRE CRC TIMEOUT ON CHAMBER PROBE</div>
+                <div>&gt; HARDWARE FAIL-SAFE: MOSFET GATE PULLED TO GROUND (0V)</div>
+                <div>&gt; PELTIER POWER SHUT DOWN TO PREVENT ACCIDENTAL FREEZING</div>
               </div>
             )}
           </div>

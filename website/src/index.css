@@ -2,35 +2,39 @@
 
 @layer base {
   :root {
-    --navy-dark: #0B2545;
-    --navy-midnight: #101C2C;
+    --navy-dark: #060B14;
+    --navy-midnight: #0A1120;
     --medical-teal: #0F766E;
-    --cooling-blue: #0284C7;
-    --thermal-amber: #D97706;
-    --bg-light: #F8FAFC;
-    --surface-white: #FFFFFF;
+    --teal-glow: #14B8A6;
+    --frost-blue: #38BDF8;
+    --thermal-amber: #F59E0B;
+    --bg-dark: #060B14;
+    --surface-dark: #0B1526;
   }
 
   body {
-    background-color: #F8FAFC;
-    color: #1E293B;
+    background-color: #060B14;
+    color: #F1F5F9;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
   }
 
-  /* Custom Light Mode Scrollbar */
+  /* Custom Sci-Fi Dark Mode Scrollbar */
   ::-webkit-scrollbar {
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #F1F5F9;
+    background: #08101D;
   }
   ::-webkit-scrollbar-thumb {
-    background: #CBD5E1;
+    background: #1E293B;
     border-radius: 4px;
+    border: 1px solid rgba(20, 184, 166, 0.2);
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #0F766E;
+    box-shadow: 0 0 10px #14B8A6;
   }
 }
 
@@ -51,23 +55,74 @@
   font-family: 'Noto Serif Devanagari', 'Nirmala UI', serif;
 }
 
-/* Subtle Technical Grid for Light Mode */
-.bg-tech-grid-light {
-  background-size: 32px 32px;
+/* Technical HUD Grid for Dark Mode */
+.bg-tech-grid-dark {
+  background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(20, 184, 166, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 184, 166, 0.05) 1px, transparent 1px);
 }
 
-.bg-radial-light {
-  background: radial-gradient(circle at 50% 20%, rgba(15, 118, 110, 0.08) 0%, rgba(248, 250, 252, 0.95) 60%, #F8FAFC 100%);
+.bg-radial-glow {
+  background: radial-gradient(circle at 50% 30%, rgba(20, 184, 166, 0.12) 0%, rgba(6, 11, 20, 0.95) 70%, #060B14 100%);
 }
 
-/* PowerPoint-Style Keynote Animations */
+/* Keyframe Animations */
+@keyframes radarSweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px rgba(20, 184, 166, 0.3));
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 25px rgba(20, 184, 166, 0.7));
+  }
+}
+
+@keyframes floatElement {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes cyberScanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(1000%);
+  }
+}
+
+@keyframes pptStepFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 @keyframes pptSlideInRight {
   from {
     opacity: 0;
-    transform: translateX(45px) scale(0.98);
+    transform: translateX(40px) scale(0.98);
   }
   to {
     opacity: 1;
@@ -75,21 +130,10 @@
   }
 }
 
-@keyframes pptSlideInUp {
+@keyframes pptZoomIn {
   from {
     opacity: 0;
-    transform: translateY(35px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pptZoomFade {
-  from {
-    opacity: 0;
-    transform: scale(0.94);
+    transform: scale(0.92);
   }
   to {
     opacity: 1;
@@ -97,36 +141,59 @@
   }
 }
 
-@keyframes softPulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(15, 118, 110, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(15, 118, 110, 0.45);
-  }
+.animate-radar-sweep {
+  animation: radarSweep 4s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+.animate-float {
+  animation: floatElement 5s infinite ease-in-out;
+}
+
+.animate-scanline {
+  animation: cyberScanline 6s linear infinite;
+}
+
+.animate-ppt-step {
+  animation: pptStepFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-ppt-slide {
   animation: pptSlideInRight 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.animate-ppt-up {
-  animation: pptSlideInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
 .animate-ppt-zoom {
-  animation: pptZoomFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: pptZoomIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.animate-pulse-glow {
-  animation: softPulseGlow 3s infinite ease-in-out;
+/* Glassmorphism Styles */
+.glass-panel-dark {
+  background: rgba(11, 21, 38, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* 3D Perspective Card Hover */
-.card-3d-hover {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+.glass-panel-teal {
+  background: rgba(15, 118, 110, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(20, 184, 166, 0.35);
 }
-.card-3d-hover:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.12);
+
+.glass-panel-amber {
+  background: rgba(245, 158, 11, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+/* 3D Horizon Perspective Container */
+.horizon-3d-perspective {
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
 }
