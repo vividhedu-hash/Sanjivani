@@ -176,88 +176,92 @@ def create_deck():
     tf1_foot = tb1_foot.text_frame
     tf1_foot.word_wrap = True
     pf1 = tf1_foot.paragraphs[0]
-    pf1.text = "Student Investigators: Daksh Sharma & Yashveer Solanki  |  Faculty Mentor: Dr. Ankit Soni"
-    pf1.font.size = Pt(13)
+    pf1.text = "Student Investigators: Vaishnavi Shrivastava, Gaurav Choudhary, Prathamesh Rao, Bhavmanyu Singh"
+    pf1.font.size = Pt(12)
     pf1.font.bold = True
     pf1.font.color.rgb = WHITE
 
     pf2 = tf1_foot.add_paragraph()
-    pf2.text = "Institution: G. D. Goenka Public School, Indore  |  Affiliation: CBSE Affiliation No. 1030588  |  Academic Year: 2026–2027"
-    pf2.font.size = Pt(10)
-    pf2.font.color.rgb = SLATE_MUTED
+    pf2.text = "Faculty Mentor: Mr. Gopal Kumar Roy  |  Institution: G. D. Goenka Public School, Indore  |  UID: SBVPH-05"
+    pf2.font.size = Pt(11)
+    pf2.font.color.rgb = CYAN_ACCENT
     pf2.space_before = Pt(3)
 
     # =========================================================================
     # SLIDE 02: RESEARCH TEAM & INSTITUTIONAL ACCREDITATION
     # =========================================================================
-    s2 = add_base_slide("Academic Accreditation", "Research Team & Institutional Credentials", "Dr. B. K. Passi Memorial Senior Balvigyan 2026–2027 | Subject: Physics", 2)
+    s2 = add_base_slide("Academic Accreditation", "Research Team & Institutional Credentials", "Dr. B. K. Passi Memorial Senior Balvigyan 2026–2027 | Subject: Physics | UID: SBVPH-05", 2)
     
     # Left Card: Student Investigators
-    add_card(s2, Inches(0.8), Inches(1.8), Inches(5.7), Inches(4.9), TEAL_ACCENT)
-    tb = s2.shapes.add_textbox(Inches(1.1), Inches(2.0), Inches(5.1), Inches(4.5))
+    add_card(s2, Inches(0.8), Inches(1.8), Inches(6.8), Inches(4.9), TEAL_ACCENT)
+    tb = s2.shapes.add_textbox(Inches(1.0), Inches(1.95), Inches(6.4), Inches(4.6))
     tf = tb.text_frame
     tf.word_wrap = True
     
     p = tf.paragraphs[0]
-    p.text = "STUDENT INVESTIGATORS"
-    p.font.size = Pt(12)
+    p.text = "STUDENT INVESTIGATORS (G. D. GOENKA PUBLIC SCHOOL)"
+    p.font.size = Pt(11)
     p.font.bold = True
     p.font.color.rgb = TEAL_ACCENT
 
-    p = tf.add_paragraph()
-    p.text = "Daksh Sharma"
-    p.font.size = Pt(20)
-    p.font.bold = True
-    p.font.color.rgb = WHITE
-    p.space_before = Pt(6)
+    team_bios = [
+        ("Vaishnavi Shrivastava (Class XI)", "Thermal Physics & Phase Change Modeling", "Formulated latent heat absorption (CrodaTherm 5 Bio-PCM), differential heat ingress equations, and diurnal thermal balance simulations."),
+        ("Gaurav Choudhary (Class XI)", "Solid-State Thermoelectrics & Heat Rejection", "Engineered dual TEC1-12706 derated driving stage, hot-side dissipation budget (Q_hot = Q_cold + P_elec = 48.5W), and skived fin heat sink matching."),
+        ("Prathamesh Rao (Class XII)", "Firmware, Hysteresis Logic & Telemetry", "Designed ESP32 closed-loop hysteresis control (+5.8°C ON / +2.8°C OFF), 1-Wire DS18B20 multi-sensor bus, and sensor-fault fail-safe routines."),
+        ("Bhavmanyu Singh (Class XII)", "Mechanical Integration & Enclosure CAD", "Architected composite LLDPE/VIP/PUF insulation layup, 6061-T6 isothermal cold jacket, payload tray damping, and 3D cutaway system layout.")
+    ]
 
-    p = tf.add_paragraph()
-    p.text = "Lead Physics Modeling & Thermodynamic Systems Architecture\n• Formulated Fourier multi-layer conduction models & VIP thermal resistance\n• Derived derated Peltier COP balance & CrodaTherm 5 phase-change enthalpy\n• Designed closed-loop hysteresis control parameters & empirical holding tests"
-    p.font.size = Pt(10)
-    p.font.color.rgb = SLATE_LIGHT
-    p.space_before = Pt(3)
+    for name, role, details in team_bios:
+        p = tf.add_paragraph()
+        p.text = f"{name} — {role}"
+        p.font.size = Pt(11)
+        p.font.bold = True
+        p.font.color.rgb = WHITE
+        p.space_before = Pt(5)
 
-    p = tf.add_paragraph()
-    p.text = "Yashveer Solanki"
-    p.font.size = Pt(20)
-    p.font.bold = True
-    p.font.color.rgb = WHITE
-    p.space_before = Pt(14)
-
-    p = tf.add_paragraph()
-    p.text = "Hardware Integration & Embedded Electronics Architecture\n• Programmed 10 Hz 1-Wire DS18B20 multi-point sensor acquisition & fail-safes\n• Designed MOSFET PWM switching stages, LiFePO4 BMS, and buck converters\n• Built 3D CAD parametric enclosures and heat sink vapor-chamber thermal paths"
-    p.font.size = Pt(10)
-    p.font.color.rgb = SLATE_LIGHT
-    p.space_before = Pt(3)
+        p_det = tf.add_paragraph()
+        p_det.text = f"• {details}"
+        p_det.font.size = Pt(8.5)
+        p_det.font.color.rgb = SLATE_LIGHT
+        p_det.space_before = Pt(1)
 
     # Right Card: Institutional Mentor & Lab
-    add_card(s2, Inches(6.8), Inches(1.8), Inches(5.7), Inches(4.9), CYAN_ACCENT)
-    tb = s2.shapes.add_textbox(Inches(7.1), Inches(2.0), Inches(5.1), Inches(4.5))
+    add_card(s2, Inches(7.9), Inches(1.8), Inches(4.6), Inches(4.9), CYAN_ACCENT)
+    tb = s2.shapes.add_textbox(Inches(8.1), Inches(1.95), Inches(4.2), Inches(4.6))
     tf = tb.text_frame
     tf.word_wrap = True
 
     p = tf.paragraphs[0]
     p.text = "FACULTY MENTOR & INSTITUTION"
-    p.font.size = Pt(12)
+    p.font.size = Pt(11)
     p.font.bold = True
     p.font.color.rgb = CYAN_ACCENT
 
     p = tf.add_paragraph()
-    p.text = "Dr. Ankit Soni"
-    p.font.size = Pt(20)
+    p.text = "Mr. Gopal Kumar Roy"
+    p.font.size = Pt(18)
     p.font.bold = True
     p.font.color.rgb = WHITE
-    p.space_before = Pt(6)
+    p.space_before = Pt(4)
 
     p = tf.add_paragraph()
     p.text = "Postgraduate Teacher in Physics, Department of Science\nG. D. Goenka Public School, Indore\n• Guided First Law energy balance and thermal circuit network formulation\n• Supervised rigorous empirical calibration against calibrated laboratory probes\n• Mentored technical documentation, FMEA analysis, and Balvigyan defense"
-    p.font.size = Pt(10)
+    p.font.size = Pt(9.5)
     p.font.color.rgb = SLATE_LIGHT
     p.space_before = Pt(3)
 
     p = tf.add_paragraph()
-    p.text = "Institutional Laboratory Validation"
-    p.font.size = Pt(14)
+    p.text = "Institutional Laboratory Facilities"
+    p.font.size = Pt(12)
+    p.font.bold = True
+    p.font.color.rgb = WHITE
+    p.space_before = Pt(12)
+
+    p = tf.add_paragraph()
+    p.text = "• Advanced Physics Lab & Mechatronics Workshop, GDGPS Indore\n• Multi-channel DAQ + Calibrated Type-K Thermocouple logging\n• Controlled Climate Chamber: Thermal simulation bench (+28°C to +45°C cyclic control)\n• Ethical Compliance: Non-clinical simulation using inert saline vaccine vials"
+    p.font.size = Pt(9)
+    p.font.color.rgb = SLATE_LIGHT
+    p.space_before = Pt(3)
     p.font.bold = True
     p.font.color.rgb = WHITE
     p.space_before = Pt(16)
